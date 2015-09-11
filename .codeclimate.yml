@@ -5,6 +5,7 @@ languages:
 exclude_paths:
     - app/
     - bin/
+    - var/
     - build/
     - src/**/*/Tests/
     - src/**/*/Resources/config
