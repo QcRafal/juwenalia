@@ -2,6 +2,28 @@
 languages:
     JavaScript: true
     PHP: true
+
+engines:
+    phpcodesniffer:
+        enabled: true
+        config:
+            file_extensions: "php,inc,lib"
+            standard: "PSR1,PSR2"
+            ignore_warnings: true
+    phpmd:
+        enabled: true
+        config:
+            file_extensions: "php"
+            rulesets: "unusedcode"
+    csslint:
+        enabled: true
+    eslint:
+        enabled: true
+
+ratings:
+    paths:
+        - "**.php"
+
 exclude_paths:
     - bin/*
     - var/*
