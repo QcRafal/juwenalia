@@ -3,10 +3,9 @@ languages:
     JavaScript: true
     PHP: true
 exclude_paths:
-    - app/
-    - bin/
-    - var/
-    - build/
-    - src/**/*/Tests/
+    - bin/*
+    - var/*
+    - build/*
+    - src/**/*/Tests/*
     - src/**/*/Resources/config
-    - vendor/
+    - vendor/*
