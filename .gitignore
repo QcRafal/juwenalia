@@ -35,3 +35,7 @@
 
 # Composer PHAR
 /composer.phar
+
+# OneSky translations
+/app/Resources/translations/*
+!/app/Resources/translations/.gitkeep

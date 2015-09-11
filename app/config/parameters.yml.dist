@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    onesky_api_key: ''
+    onesky_secret: ''
+    onesky_project: ''

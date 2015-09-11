@@ -1,0 +1,10 @@
+seven_onesky:
+    api_key: %onesky_api_key%
+    secret:  %onesky_secret%
+    project: %onesky_project%
+    # Configure mappings to match your needs, every mapping includes,
+    #    sources - list of files to export, all by default
+    #    locales - list of locales to export, all by default
+    #    output - output filename pattern, you can use [filename], [locale], [extension] and [dirname] as parameters
+    mappings:
+        - { sources: ["messages.yml"], locales: ["en", "pl"], output: "%kernel.root_dir%/Resources/translations/messages.[locale].yml" }
