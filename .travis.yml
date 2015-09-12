@@ -4,6 +4,7 @@ sudo: false
 env:
   global:
     - SYMFONY_VERSION=""
+    - SYMFONY_ENV=test
 
 addons:
   code_climate:
@@ -28,10 +29,11 @@ matrix:
 
 before_install:
   - composer self-update
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony:$SYMFONY_VERSION; fi
+  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update --with-dependencies symfony/symfony:$SYMFONY_VERSION; fi
 
 after_script:
   - vendor/bin/test-reporter
 
 install:
   - composer install -n
+  - bin/console cache:clear -e test
