@@ -17,6 +17,6 @@ class EventRepository extends EntityRepository
      */
     public function findAllQueryBuilder()
     {
-        return $this->createQueryBuilder('e');
+        return $this->createQueryBuilder('ev');
     }
 }
