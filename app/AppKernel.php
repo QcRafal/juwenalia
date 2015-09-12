@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Seven\Bundle\OneskyBundle\SevenOneskyBundle(),
 
             new Endo\ApiBundle\EndoApiBundle(),
+            new Endo\DataBundle\EndoDataBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
