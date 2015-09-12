@@ -4,7 +4,6 @@ namespace Endo\DataBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
  * Class News
  *
@@ -223,6 +222,5 @@ class News
     {
         $this->organizers->removeElement($organizer);
     }
-
 
 }

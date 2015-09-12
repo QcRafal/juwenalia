@@ -4,7 +4,6 @@ namespace Endo\DataBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
  * Class Event
  *
@@ -145,6 +144,5 @@ class Event
         $this->organizers = $organizers;
     }
 
-
-
 }
+

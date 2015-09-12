@@ -4,7 +4,6 @@ namespace Endo\DataBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
  * Class Artist
  *
@@ -139,3 +138,4 @@ class Artist
         $this->events->removeElement($event);
     }
 }
+

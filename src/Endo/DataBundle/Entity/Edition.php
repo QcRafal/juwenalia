@@ -97,5 +97,4 @@ class Edition
         $this->events->removeElement($event);
     }
 
-
 }

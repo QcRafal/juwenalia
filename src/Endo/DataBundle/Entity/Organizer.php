@@ -144,5 +144,4 @@ class Organizer
         $this->news = $news;
     }
 
-
 }
