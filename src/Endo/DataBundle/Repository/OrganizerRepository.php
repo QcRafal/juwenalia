@@ -4,7 +4,6 @@ namespace Endo\DataBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-
 /**
  * Class OrganizerRepository
  *
