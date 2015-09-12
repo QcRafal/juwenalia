@@ -2,8 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: bundle/doctrine_migrations.yml }
     - { resource: bundle/fos_rest.yml }
     - { resource: bundle/jms_serializer.yml }
+    - { resource: bundle/liip_code.yml }
     - { resource: bundle/seven_onesky.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed

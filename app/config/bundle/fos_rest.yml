@@ -2,3 +2,6 @@ fos_rest:
     routing_loader:
         default_format: json
         include_format: false
+    serializer:
+        groups: [api]
+        serialize_null: true

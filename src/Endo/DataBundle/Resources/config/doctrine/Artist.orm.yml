@@ -1,0 +1,21 @@
+Endo\DataBundle\Entity\Artist:
+    type: entity
+    table: null
+    repositoryClass: Endo\DataBundle\Repository\ArtistRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+    manyToMany:
+        events:
+            targetEntity: Endo\DataBundle\Entity\Event
+            mappedBy: artists
+    lifecycleCallbacks: {  }

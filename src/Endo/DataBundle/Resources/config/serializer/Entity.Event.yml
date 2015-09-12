@@ -1,0 +1,18 @@
+Endo\DataBundle\Entity\Event:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            type: integer
+            groups: [api, id]
+            since_version: 1.0.0
+        title:
+            expose: true
+            type: integer
+            groups: [api]
+            since_version: 1.0.0
+        artists:
+            expose: true
+            type: ArrayCollection<Endo\DataBundle\Entity\Artist>
+            groups: [id]
+            since_version: 1.0.0
