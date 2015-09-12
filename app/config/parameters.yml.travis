@@ -3,7 +3,7 @@ parameters:
     database_host:     127.0.0.1
     database_port:     ~
     database_name:     juwenalia
-    database_user:     postgres
+    database_user:     %database.user%
     database_password: ~
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"

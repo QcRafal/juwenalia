@@ -11,8 +11,8 @@ env:
   global:
     - SYMFONY__ENV=test
   matrix:
-    - DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql
-    - DB=mysql SYMFONY__DATABASE__TYPE=pdo_mysql
+    - DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
+    - DB=mysql SYMFONY__DATABASE__TYPE=pdo_mysql SYMFONY__DATABASE__USER=root
 
 addons:
   postgresql: "9.4"
@@ -23,7 +23,7 @@ matrix:
   fast_finish: true
   exclude:
     - php: hhvm
-      env: DB=pgsql
+      env: DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
   allow_failures:
     - php: 7.0
 
