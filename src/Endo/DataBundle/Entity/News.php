@@ -222,5 +222,4 @@ class News
     {
         $this->organizers->removeElement($organizer);
     }
-
 }

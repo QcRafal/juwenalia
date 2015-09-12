@@ -26,14 +26,12 @@ class Event
      */
     protected $edition;
 
-
     /**
      * Event Title
      *
      * @var string
      */
     protected $title;
-
 
     /**
      * Collection of artists
@@ -143,6 +141,5 @@ class Event
     {
         $this->organizers = $organizers;
     }
-
 }
 
