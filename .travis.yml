@@ -9,15 +9,15 @@ php:
 
 env:
   global:
-    - SYMFONY_ENV=test
+    - SYMFONY__ENV=test
   matrix:
-    - DB=pgsql
+    - DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql
+    - DB=mysql SYMFONY__DATABASE__TYPE=pdo_mysql
 
 addons:
   postgresql: "9.4"
   code_climate:
     repo_token: c0878c1620cc24b05446192c5974072668acba14adb7bb694664ea06643caf1f
-
 
 matrix:
   fast_finish: true
@@ -29,14 +29,13 @@ matrix:
 
 before_install:
   - composer self-update
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony:$SYMFONY_VERSION; fi
-
-after_script:
-  - bin/test-reporter
 
 install:
   - cp app/config/parameters.yml.travis app/config/parameters.yml
   - composer install -n
-  - bin/console cache:clear -e test
-  - bin/console doctrine:database:create -e test
-  - bin/console doctrine:schema:create -e test
+  - bin/console cache:clear
+  - bin/console doctrine:database:create
+  - bin/console doctrine:schema:create
+
+after_script:
+  - bin/test-reporter
