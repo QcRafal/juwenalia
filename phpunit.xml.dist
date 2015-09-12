@@ -8,6 +8,7 @@
          bootstrap="var/bootstrap.php.cache"
          convertNoticesToExceptions="false"
          convertWarningsToExceptions="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
 >
     <testsuites>
         <testsuite name="Project Test Suite">
@@ -26,25 +27,25 @@
         <whitelist>
             <directory>src</directory>
             <exclude>
-                <file>src/*Bundle/DependencyInjection/Configuration.php</file>
-                <file>src/*Bundle/DependencyInjection/*Extension.php</file>
-                <file>src/*Bundle/*Bundle.php</file>
+                <directory suffix="Configuration.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Extension.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Bundle.php">src/*Bundle/</directory>
                 <directory>src/*Bundle/Context</directory>
                 <directory>src/*Bundle/Entity</directory>
                 <directory>src/*Bundle/Resources</directory>
                 <directory>src/*Bundle/Tests</directory>
 
-                <file>src/*/*Bundle/DependencyInjection/Configuration.php</file>
-                <file>src/*/*Bundle/DependencyInjection/*Extension.php</file>
-                <file>src/*/*Bundle/*Bundle.php</file>
+                <directory suffix="Configuration.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Extension.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Bundle.php">src/*Bundle/</directory>
                 <directory>src/*/*Bundle/Context</directory>
                 <directory>src/*/*Bundle/Entity</directory>
                 <directory>src/*/*Bundle/Resources</directory>
                 <directory>src/*/*Bundle/Tests</directory>
 
-                <file>src/*/Bundle/*Bundle/DependencyInjection/Configuration.php</file>
-                <file>src/*/Bundle/*Bundle/DependencyInjection/*Extension.php</file>
-                <file>src/*/Bundle/*Bundle/*Bundle.php</file>
+                <directory suffix="Configuration.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Extension.php">src/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Bundle.php">src/*Bundle/</directory>
                 <directory>src/*/Bundle/*Bundle/Context</directory>
                 <directory>src/*/Bundle/*Bundle/Entity</directory>
                 <directory>src/*/Bundle/*Bundle/Resources</directory>
