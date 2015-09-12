@@ -19,8 +19,6 @@ addons:
     repo_token: c0878c1620cc24b05446192c5974072668acba14adb7bb694664ea06643caf1f
 
 
-    - mysql
-
 matrix:
   fast_finish: true
   exclude:
