@@ -142,4 +142,3 @@ class Event
         $this->organizers = $organizers;
     }
 }
-
