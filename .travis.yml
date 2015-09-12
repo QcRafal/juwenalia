@@ -1,31 +1,33 @@
 language: php
 sudo: false
 
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
 env:
   global:
-    - SYMFONY_VERSION=""
     - SYMFONY_ENV=test
+  matrix:
+    - DB=pgsql
 
 addons:
+  postgresql: "9.4"
   code_climate:
     repo_token: c0878c1620cc24b05446192c5974072668acba14adb7bb694664ea06643caf1f
 
+
+    - mysql
+
 matrix:
   fast_finish: true
-  include:
-    - php: 5.5
-    - php: 5.6
-    - php: 5.6
-      env: SYMFONY_VERSION="2.7.x"
-    - php: 5.6
-      env: SYMFONY_VERSION="2.8.x-dev"
+  exclude:
     - php: hhvm
-    - php: nightly
+      env: DB=pgsql
   allow_failures:
-    - php: hhvm
-    - php: nightly
-    - env: SYMFONY_VERSION="2.7.x-dev"
-    - env: SYMFONY_VERSION="2.8.x-dev"
+    - php: 7.0
 
 before_install:
   - composer self-update
@@ -35,5 +37,8 @@ after_script:
   - bin/test-reporter
 
 install:
+  - cp app/config/parameters.yml.travis app/config/parameters.yml
   - composer install -n
   - bin/console cache:clear -e test
+  - bin/console doctrine:database:create -e test
+  - bin/console doctrine:schema:create -e test
