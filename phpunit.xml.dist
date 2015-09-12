@@ -6,6 +6,8 @@
          backupGlobals="false"
          colors="true"
          bootstrap="var/bootstrap.php.cache"
+         convertNoticesToExceptions="false"
+         convertWarningsToExceptions="false"
 >
     <testsuites>
         <testsuite name="Project Test Suite">
