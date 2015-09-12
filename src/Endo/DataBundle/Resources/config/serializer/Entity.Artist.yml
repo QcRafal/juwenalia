@@ -6,7 +6,7 @@ Endo\DataBundle\Entity\Artist:
             type: integer
             groups: [api, id]
             since_version: 1.0.0
-        name:
+        title:
             expose: true
             type: string
             groups: [api]

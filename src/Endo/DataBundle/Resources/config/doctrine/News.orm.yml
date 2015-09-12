@@ -1,7 +1,7 @@
-Endo\DataBundle\Entity\Event:
+Endo\DataBundle\Entity\News:
     type: entity
     table: null
-    repositoryClass: Endo\DataBundle\Repository\EventRepository
+    repositoryClass: Endo\DataBundle\Repository\NewsRepository
     id:
         id:
             type: integer
@@ -12,18 +12,14 @@ Endo\DataBundle\Entity\Event:
         title:
             type: string
             length: 255
-    manyToOne:
-        edition:
-            targetEntity: Endo\DataBundle\Entity\Edition
-            inversedBy: events
     manyToMany:
+        events:
+            targetEntity: Endo\DataBundle\Entity\Event
+            inversedBy: news
         artists:
             targetEntity: Endo\DataBundle\Entity\Artist
-            inversedBy: events
+            inversedBy: news
         organizers:
             targetEntity: Endo\DataBundle\Entity\Organizer
-            inversedBy: events
-        news:
-            targetEntity: Endo\DataBundle\Entity\News
-            mappedBy: events
+            inversedBy: news
     lifecycleCallbacks: {  }

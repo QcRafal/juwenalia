@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Class Event
  *
- * @author  Rafał Kuć <rafal.kuc@laboratorium.ee>
+ * @author  Rafał Kuć <qc.rafal@gmail.com>
  * @package Endo\DataBundle\Entity
  */
 class Event
@@ -19,6 +19,13 @@ class Event
      * @var integer
      */
     protected $id;
+
+    /**
+     * Event edition
+     *
+     * @var Edition
+     */
+    protected $edition;
 
 
     /**
@@ -37,11 +44,27 @@ class Event
     protected $artists;
 
     /**
+     * Collection of organizers
+     *
+     * @var Organizer[]
+     */
+    protected $organizers;
+
+    /**
+     * Collection of news
+     *
+     * @var News[]
+     */
+    protected $news;
+
+    /**
      * Event constructor.
      */
     public function __construct()
     {
         $this->artists = new ArrayCollection();
+        $this->organizers = new ArrayCollection();
+        $this->news = new ArrayCollection();
     }
 
     /**
@@ -52,6 +75,22 @@ class Event
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return Edition
+     */
+    public function getEdition()
+    {
+        return $this->edition;
+    }
+
+    /**
+     * @param Edition $edition
+     */
+    public function setEdition(Edition $edition)
+    {
+        $this->edition = $edition;
     }
 
     /**
@@ -73,6 +112,39 @@ class Event
 
         return $this;
     }
+
+    /**
+     * @return Artist[]
+     */
+    public function getArtists()
+    {
+        return $this->artists;
+    }
+
+    /**
+     * @param Artist[] $artists
+     */
+    public function setArtists($artists)
+    {
+        $this->artists = $artists;
+    }
+
+    /**
+     * @return Organizer[]
+     */
+    public function getOrganizers()
+    {
+        return $this->organizers;
+    }
+
+    /**
+     * @param Organizer[] $organizers
+     */
+    public function setOrganizers($organizers)
+    {
+        $this->organizers = $organizers;
+    }
+
 
 
 }

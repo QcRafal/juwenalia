@@ -1,7 +1,7 @@
-Endo\DataBundle\Entity\Artist:
+Endo\DataBundle\Entity\Edition:
     type: entity
     table: null
-    repositoryClass: Endo\DataBundle\Repository\ArtistRepository
+    repositoryClass: Endo\DataBundle\Repository\EditionRepository
     id:
         id:
             type: integer
@@ -12,13 +12,8 @@ Endo\DataBundle\Entity\Artist:
         title:
             type: string
             length: 255
-        description:
-            type: text
-    manyToMany:
+    oneToMany:
         events:
             targetEntity: Endo\DataBundle\Entity\Event
-            mappedBy: artists
-        news:
-            targetEntity: Endo\DataBundle\Entity\News
-            mappedBy: artists
+            mappedBy: edition
     lifecycleCallbacks: {  }

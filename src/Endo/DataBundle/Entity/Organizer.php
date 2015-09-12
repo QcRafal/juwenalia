@@ -4,31 +4,30 @@ namespace Endo\DataBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
- * Class Artist
+ * Class Organizer
  *
  * @author  Rafał Kuć <qc.rafal@gmail.com>
  * @package Endo\DataBundle\Entity
  */
-class Artist
+class Organizer
 {
     /**
-     * Artist Id
+     * Organizer Id
      *
      * @var integer
      */
     protected $id;
 
     /**
-     * Artist name
+     * Organizer title
      *
      * @var string
      */
     protected $title;
 
     /**
-     * Artist description
+     * Organizer description
      *
      * @var string
      */
@@ -49,7 +48,7 @@ class Artist
     protected $news;
 
     /**
-     * Artist constructor.
+     * Organizer constructor.
      */
     public function __construct()
     {
@@ -58,9 +57,7 @@ class Artist
     }
 
     /**
-     * Get id
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -84,22 +81,6 @@ class Artist
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Artist
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
      * @return string
      */
     public function getDescription()
@@ -108,19 +89,27 @@ class Artist
     }
 
     /**
-     * @param $events
+     * @param string $description
      */
-    public function setEvents($events)
+    public function setDescription($description)
     {
-        $this->events = $events;
+        $this->description = $description;
     }
 
     /**
-     * @return ArrayCollection|Event[]
+     * @return Event[]
      */
     public function getEvents()
     {
         return $this->events;
+    }
+
+    /**
+     * @param Event[] $events
+     */
+    public function setEvents($events)
+    {
+        $this->events = $events;
     }
 
     /**
@@ -138,4 +127,22 @@ class Artist
     {
         $this->events->removeElement($event);
     }
+
+    /**
+     * @return News[]
+     */
+    public function getNews()
+    {
+        return $this->news;
+    }
+
+    /**
+     * @param News[] $news
+     */
+    public function setNews($news)
+    {
+        $this->news = $news;
+    }
+
+
 }

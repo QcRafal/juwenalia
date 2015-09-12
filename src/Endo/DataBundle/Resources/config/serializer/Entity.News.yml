@@ -1,4 +1,4 @@
-Endo\DataBundle\Entity\Event:
+Endo\DataBundle\Entity\Edition:
     exclusion_policy: ALL
     properties:
         id:
@@ -14,6 +14,11 @@ Endo\DataBundle\Entity\Event:
         artists:
             expose: true
             type: ArrayCollection<Endo\DataBundle\Entity\Artist>
+            groups: [id]
+            since_version: 1.0.0
+        events:
+            expose: true
+            type: ArrayCollection<Endo\DataBundle\Entity\Event>
             groups: [id]
             since_version: 1.0.0
         organizers:

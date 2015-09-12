@@ -1,7 +1,7 @@
-Endo\DataBundle\Entity\Artist:
+Endo\DataBundle\Entity\Organizer:
     type: entity
     table: null
-    repositoryClass: Endo\DataBundle\Repository\ArtistRepository
+    repositoryClass: Endo\DataBundle\Repository\OrganizerRepository
     id:
         id:
             type: integer
@@ -17,8 +17,8 @@ Endo\DataBundle\Entity\Artist:
     manyToMany:
         events:
             targetEntity: Endo\DataBundle\Entity\Event
-            mappedBy: artists
+            mappedBy: organizers
         news:
             targetEntity: Endo\DataBundle\Entity\News
-            mappedBy: artists
+            mappedBy: organizers
     lifecycleCallbacks: {  }

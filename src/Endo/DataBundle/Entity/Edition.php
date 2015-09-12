@@ -4,35 +4,27 @@ namespace Endo\DataBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-
 /**
- * Class Artist
+ * Class Edition
  *
  * @author  Rafał Kuć <qc.rafal@gmail.com>
  * @package Endo\DataBundle\Entity
  */
-class Artist
+class Edition
 {
     /**
-     * Artist Id
+     * Edition id
      *
-     * @var integer
+     * @var int
      */
     protected $id;
 
     /**
-     * Artist name
+     * Edition title
      *
      * @var string
      */
     protected $title;
-
-    /**
-     * Artist description
-     *
-     * @var string
-     */
-    protected $description;
 
     /**
      * Collection of events
@@ -42,25 +34,15 @@ class Artist
     protected $events;
 
     /**
-     * Collection of news
-     *
-     * @var News[]
-     */
-    protected $news;
-
-    /**
-     * Artist constructor.
+     * Edition constructor.
      */
     public function __construct()
     {
         $this->events = new ArrayCollection();
-        $this->news = new ArrayCollection();
     }
 
     /**
-     * Get id
-     *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -84,43 +66,19 @@ class Artist
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Artist
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param $events
-     */
-    public function setEvents($events)
-    {
-        $this->events = $events;
-    }
-
-    /**
-     * @return ArrayCollection|Event[]
+     * @return Event[]
      */
     public function getEvents()
     {
         return $this->events;
+    }
+
+    /**
+     * @param Event[] $events
+     */
+    public function setEvents($events)
+    {
+        $this->events = $events;
     }
 
     /**
@@ -138,4 +96,6 @@ class Artist
     {
         $this->events->removeElement($event);
     }
+
+
 }
