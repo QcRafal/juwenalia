@@ -1,0 +1,3 @@
+api_artists:
+    type: rest
+    resource: Endo\ApiBundle\Controller\ArtistApiController

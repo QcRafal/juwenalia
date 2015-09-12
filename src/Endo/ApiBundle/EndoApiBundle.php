@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace Endo\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class EndoApiBundle extends Bundle
 {
 }

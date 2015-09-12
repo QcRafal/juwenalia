@@ -17,11 +17,15 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "skolodyazhnyy/onesky-bundle": "^1.0"
+        "skolodyazhnyy/onesky-bundle": "^1.0",
+        "friendsofsymfony/rest-bundle": "^1.7",
+        "jms/serializer-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "codeclimate/php-test-reporter": "dev-master"
+        "codeclimate/php-test-reporter": "dev-master",
+        "symfony/phpunit-bridge": "^2.7",
+        "behat/behat": "^3.0"
     },
     "scripts": {
         "post-root-package-install": [
@@ -45,6 +49,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
+    },
+    "config": {
+        "bin-dir": "bin/"
     },
     "extra": {
         "symfony-app-dir": "app",
