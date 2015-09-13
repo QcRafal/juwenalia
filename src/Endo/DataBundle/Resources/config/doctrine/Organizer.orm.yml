@@ -16,6 +16,13 @@ Endo\DataBundle\Entity\Organizer:
         slug:
             type: string
             length: 255
+            unique: true
+            gedmo:
+                slug:
+                    fields:
+                        - title
+        isPublic:
+            type: boolean
             nullable: false
         description:
             type: text

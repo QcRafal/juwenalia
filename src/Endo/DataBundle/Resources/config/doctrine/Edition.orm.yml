@@ -16,7 +16,11 @@ Endo\DataBundle\Entity\Edition:
         slug:
             type: string
             length: 255
-            nullable: false
+            unique: true
+            gedmo:
+                slug:
+                    fields:
+                        - title
         isPublic:
             type: boolean
             nullable: false

@@ -6,7 +6,7 @@ khepin_yaml_fixtures:
 #        - EndoDataBundle/artists
 #        - EndoDataBundle/artists_test
 #        - EndoDataBundle/organizers
-#        - EndoDataBundle/organizers_test
+        - EndoDataBundle/organizers_test
 #        - EndoDataBundle/events
         - EndoDataBundle/events_test
 #        - EndoDataBundle/news

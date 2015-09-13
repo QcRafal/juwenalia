@@ -16,7 +16,11 @@ Endo\DataBundle\Entity\News:
         slug:
             type: string
             length: 255
-            nullable: false
+            unique: true
+            gedmo:
+                slug:
+                    fields:
+                        - title
     manyToMany:
         events:
             targetEntity: Endo\DataBundle\Entity\Event

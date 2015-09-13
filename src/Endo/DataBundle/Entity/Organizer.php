@@ -34,6 +34,13 @@ class Organizer
     protected $slug;
 
     /**
+     * Organizer isPublic flag
+     *
+     * @var boolean
+     */
+    protected $isPublic;
+
+    /**
      * Organizer description
      *
      * @var string
@@ -101,6 +108,22 @@ class Organizer
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * @param boolean $isPublic
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
     }
 
     /**

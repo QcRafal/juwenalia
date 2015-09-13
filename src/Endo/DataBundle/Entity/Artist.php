@@ -34,6 +34,13 @@ class Artist
     protected $slug;
 
     /**
+     * Artist isPublic flag
+     *
+     * @var boolean
+     */
+    protected $isPublic;
+
+    /**
      * Artist description
      *
      * @var string
@@ -103,6 +110,22 @@ class Artist
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * @param boolean $isPublic
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
     }
 
     /**

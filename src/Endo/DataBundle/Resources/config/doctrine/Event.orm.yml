@@ -21,6 +21,9 @@ Endo\DataBundle\Entity\Event:
                 slug:
                     fields:
                         - title
+        isPublic:
+            type: boolean
+            nullable: false
         dateTimeStart:
             type: datetime
             nullable: false
@@ -44,7 +47,4 @@ Endo\DataBundle\Entity\Event:
         news:
             targetEntity: Endo\DataBundle\Entity\News
             mappedBy: events
-    indexes:
-        search_idx:
-            columns: slug
     lifecycleCallbacks: {  }
