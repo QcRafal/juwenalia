@@ -37,6 +37,7 @@ install:
   - bin/console doctrine:database:create
   - bin/console doctrine:schema:create
   - bin/console khepin:yamlfixtures:load test
+  - bin/console cache:clear
 
 after_script:
   - bin/test-reporter
