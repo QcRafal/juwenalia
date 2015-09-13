@@ -9,3 +9,7 @@ api_edition:
 api_event:
     type: rest
     resource: Endo\ApiBundle\Controller\EventApiController
+
+api_organizer:
+    type: rest
+    resource: Endo\ApiBundle\Controller\OrganizerApiController

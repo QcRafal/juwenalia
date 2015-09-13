@@ -5,10 +5,10 @@ namespace Endo\ApiBundle\Tests\Controller;
 use JMS\Serializer\Serializer;
 
 /**
- * Class EventControllerTest
+ * Class OrganizerControllerTest
  * @package Endo\ApiBundle\Tests\Controller
  */
-class EventControllerTest extends AbstractControllerTest
+class OrganizerControllerTest extends AbstractControllerTest
 {
     /**
      * @var Serializer
@@ -24,45 +24,45 @@ class EventControllerTest extends AbstractControllerTest
     }
 
     /**
-     * EventApiController:cgetAction test
+     * OrganizerApiController:cgetAction test
      */
-    public function testCGetEvent()
+    public function testCGetOrganizer()
     {
         $client = static::createClient();
 
         $crawler = $client->request(
             'GET',
-            $this->routerGenerateUrl('get_events')
+            $this->routerGenerateUrl('get_organizers')
         );
 
         $this->standardResponseTest($client->getResponse());
     }
 
     /**
-     * EventApiController:getAction test
+     * OrganizerApiController:getAction test
      */
-    public function testGetEvent()
+    public function testGetOrganizer()
     {
         $client = static::createClient();
 
         $crawler = $client->request(
             'GET',
-            $this->routerGenerateUrl('get_event', ['slug' => 'test-event-1',])
+            $this->routerGenerateUrl('get_organizer', ['slug' => 'test-organizer-1',])
         );
 
         $this->standardResponseTest($client->getResponse());
     }
 
     /**
-     * EventApiController:getAction test
+     * OrganizerApiController:getAction test
      */
-    public function testGetEventNotFound()
+    public function testGetOrganizerNotFound()
     {
         $client = static::createClient();
 
         $crawler = $client->request(
             'GET',
-            $this->routerGenerateUrl('get_event', ['slug' => 'non-existing-event',])
+            $this->routerGenerateUrl('get_organizer', ['slug' => 'non-existing-organizer',])
         );
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());

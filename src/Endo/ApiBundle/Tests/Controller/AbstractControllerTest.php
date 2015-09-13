@@ -18,6 +18,8 @@ abstract class AbstractControllerTest extends WebTestCase
      */
     protected $container;
 
+
+
     /**
      * {@inheritdoc}
      */

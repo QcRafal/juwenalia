@@ -37,6 +37,7 @@ class AppKernel extends Kernel
 
             new Endo\ApiBundle\EndoApiBundle(),
             new Endo\DataBundle\EndoDataBundle(),
+            new Endo\ApiDocBundle\EndoApiDocBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
