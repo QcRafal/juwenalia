@@ -2,42 +2,43 @@ language: php
 sudo: false
 
 php:
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
+    - 5.5
+    - 5.6
+    - 7.0
+    - hhvm
 
 env:
-  global:
-    - SYMFONY__ENV=test
-  matrix:
-    - DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
-    - DB=mysql SYMFONY__DATABASE__TYPE=pdo_mysql SYMFONY__DATABASE__USER=root
+    global:
+        - SYMFONY__ENV=test
+    matrix:
+        - DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
+        - DB=mysql SYMFONY__DATABASE__TYPE=pdo_mysql SYMFONY__DATABASE__USER=root
 
 addons:
-  postgresql: "9.4"
-  code_climate:
-    repo_token: c0878c1620cc24b05446192c5974072668acba14adb7bb694664ea06643caf1f
+    postgresql: "9.4"
+    code_climate:
+        repo_token: c0878c1620cc24b05446192c5974072668acba14adb7bb694664ea06643caf1f
 
 matrix:
-  fast_finish: true
-  exclude:
-    - php: hhvm
-      env: DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
-  allow_failures:
-    - php: 7.0
+    fast_finish: true
+    exclude:
+        - php: hhvm
+          env: DB=pgsql SYMFONY__DATABASE__TYPE=pdo_pgsql SYMFONY__DATABASE__USER=postgres
+    allow_failures:
+        - php: 7.0
 
 before_install:
-  - composer self-update
+    - composer self-update
 
 install:
-  - cp app/config/parameters.yml.travis app/config/parameters.yml
-  - composer install -n
-  - bin/console cache:clear
-  - bin/console doctrine:database:create
-  - bin/console doctrine:schema:create
-  - bin/console khepin:yamlfixtures:load test
-  - bin/console cache:clear
+    - cp app/config/parameters.yml.travis app/config/parameters.yml
+    - composer install -n
+    - bin/console doctrine:database:create
+    - bin/console doctrine:schema:create
+    - bin/console khepin:yamlfixtures:load test
+    - bin/console cache:clear   
+    - bin/console fos:user:create admin admin@example.com pass
+    - bin/console cache:clear
 
 after_script:
-  - bin/test-reporter
+    - bin/test-reporter
