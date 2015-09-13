@@ -18,9 +18,9 @@ class EditionControllerTest extends AbstractControllerTest
     }
 
     /**
-     * ArtistApiController:cgetAction test
+     * EditionApiController:cgetAction test
      */
-    public function testCGetArtists()
+    public function testCGetEditions()
     {
         $client = static::createClient();
 
@@ -30,9 +30,9 @@ class EditionControllerTest extends AbstractControllerTest
     }
 
     /**
-     * ArtistApiController:getAction test
+     * EditionApiController:getAction test
      */
-    public function testGetArtist()
+    public function testGetEdition()
     {
         $client = static::createClient();
 
@@ -42,9 +42,9 @@ class EditionControllerTest extends AbstractControllerTest
     }
 
     /**
-     * ArtistApiController:getAction test
+     * EditionApiController:getAction test
      */
-    public function testGetArtistNotFound()
+    public function testGetEditionNotFound()
     {
         $client = static::createClient();
 

@@ -18,9 +18,9 @@ class EventControllerTest extends AbstractControllerTest
     }
 
     /**
-     * ArtistApiController:cgetAction test
+     * EventApiController:cgetAction test
      */
-    public function testCGetArtists()
+    public function testCGetEvent()
     {
         $client = static::createClient();
 
@@ -30,13 +30,25 @@ class EventControllerTest extends AbstractControllerTest
     }
 
     /**
-     * ArtistApiController:getAction test
+     * EventApiController:getAction test
      */
-    public function testGetArtistNotFound()
+    public function testGetEvent()
     {
         $client = static::createClient();
 
         $crawler = $client->request('GET', $this->routerGenerateUrl('get_event', ['slug' => 'test-event',]));
+
+        $this->standardResponseTest($client->getResponse());
+    }
+
+    /**
+     * EventApiController:getAction test
+     */
+    public function testGetEventNotFound()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', $this->routerGenerateUrl('get_event', ['slug' => 'non-existing-event',]));
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         $this->assertEquals('application/json', $client->getResponse()->headers->get('Content-Type'));

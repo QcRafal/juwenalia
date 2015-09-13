@@ -8,7 +8,7 @@ Endo\DataBundle\Entity\Edition:
             since_version: 1.0.0
         title:
             expose: true
-            type: integer
+            type: string
             groups: [api]
             since_version: 1.0.0
         artists:
