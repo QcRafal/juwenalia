@@ -1,0 +1,9 @@
+Endo\UserBundle\Entity\User:
+    type: entity
+    table: app_user
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO

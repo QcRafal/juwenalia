@@ -1,0 +1,9 @@
+fos_oauth_server:
+    db_driver: orm       # Driver availables: orm, mongodb, or propel
+    client_class:        Endo\OAuthBundle\Entity\Client
+    access_token_class:  Endo\OAuthBundle\Entity\AccessToken
+    refresh_token_class: Endo\OAuthBundle\Entity\RefreshToken
+    auth_code_class:     Endo\OAuthBundle\Entity\AuthCode
+
+    service:
+        user_provider: fos_user.user_manager

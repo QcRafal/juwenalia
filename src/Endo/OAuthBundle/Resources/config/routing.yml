@@ -1,0 +1,3 @@
+endo_o_auth_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EndoOAuthBundle:Default:index }

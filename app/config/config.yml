@@ -3,7 +3,9 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: bundle/doctrine_migrations.yml }
+    - { resource: bundle/fos_oauth_server.yml }
     - { resource: bundle/fos_rest.yml }
+    - { resource: bundle/fos_user.yml }
     - { resource: bundle/jms_serializer.yml }
     - { resource: bundle/khepin_yaml_fixtures.yml }
     - { resource: bundle/nelmio_api_doc.yml }

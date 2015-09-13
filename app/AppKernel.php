@@ -26,18 +26,21 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Seven\Bundle\OneskyBundle\SevenOneskyBundle(),
+            new Liip\CodeBundle\LiipCodeBundle(),
 
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
 
-            new Seven\Bundle\OneskyBundle\SevenOneskyBundle(),
-
-            new Liip\CodeBundle\LiipCodeBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
 
             new Endo\ApiBundle\EndoApiBundle(),
             new Endo\DataBundle\EndoDataBundle(),
             new Endo\ApiDocBundle\EndoApiDocBundle(),
+            new Endo\UserBundle\EndoUserBundle(),
+            new Endo\OAuthBundle\EndoOAuthBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

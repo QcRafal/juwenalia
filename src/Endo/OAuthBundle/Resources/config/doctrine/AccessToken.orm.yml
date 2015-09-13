@@ -1,0 +1,15 @@
+Endo\OAuthBundle\Entity\AccessToken:
+    type: entity
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        client:
+            targetEntity: Endo\OAuthBundle\Entity\Client
+        user:
+            targetEntity: Endo\UserBundle\Entity\User
+            joinColumn:
+                nullable: false

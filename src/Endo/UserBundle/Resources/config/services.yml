@@ -1,0 +1,4 @@
+services:
+#    endo_user.example:
+#        class: Endo\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
