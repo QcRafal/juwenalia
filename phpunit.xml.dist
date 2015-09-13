@@ -24,6 +24,9 @@
     </php>
 
     <filter>
+        <blacklist>
+
+        </blacklist>
         <whitelist>
             <directory>src</directory>
             <exclude>
@@ -35,17 +38,17 @@
                 <directory>src/*Bundle/Resources</directory>
                 <directory>src/*Bundle/Tests</directory>
 
-                <directory suffix="Configuration.php">src/*Bundle/DependencyInjection/</directory>
-                <directory suffix="Extension.php">src/*Bundle/DependencyInjection/</directory>
-                <directory suffix="Bundle.php">src/*Bundle/</directory>
+                <directory suffix="Configuration.php">src/*/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Extension.php">src/*/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Bundle.php">src/*/*Bundle/</directory>
                 <directory>src/*/*Bundle/Context</directory>
                 <directory>src/*/*Bundle/Entity</directory>
                 <directory>src/*/*Bundle/Resources</directory>
                 <directory>src/*/*Bundle/Tests</directory>
 
-                <directory suffix="Configuration.php">src/*Bundle/DependencyInjection/</directory>
-                <directory suffix="Extension.php">src/*Bundle/DependencyInjection/</directory>
-                <directory suffix="Bundle.php">src/*Bundle/</directory>
+                <directory suffix="Configuration.php">src/*/Bundle/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Extension.php">src/*/Bundle/*Bundle/DependencyInjection/</directory>
+                <directory suffix="Bundle.php">src/*/Bundle/*Bundle/</directory>
                 <directory>src/*/Bundle/*Bundle/Context</directory>
                 <directory>src/*/Bundle/*Bundle/Entity</directory>
                 <directory>src/*/Bundle/*Bundle/Resources</directory>
