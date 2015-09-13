@@ -5,6 +5,7 @@ imports:
     - { resource: bundle/doctrine_migrations.yml }
     - { resource: bundle/fos_rest.yml }
     - { resource: bundle/jms_serializer.yml }
+    - { resource: bundle/khepin_yaml_fixtures.yml }
     - { resource: bundle/liip_code.yml }
     - { resource: bundle/seven_onesky.yml }
 

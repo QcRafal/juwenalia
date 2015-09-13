@@ -11,6 +11,11 @@ Endo\DataBundle\Entity\Artist:
             type: string
             groups: [api]
             since_version: 1.0.0
+        slug:
+            expose: true
+            type: string
+            groups: [api]
+            since_version: 1.0.0
         description:
             expose: true
             type: string

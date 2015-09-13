@@ -27,6 +27,13 @@ class Artist
     protected $title;
 
     /**
+     * Artist slug (from title)
+     *
+     * @var string
+     */
+    protected $slug;
+
+    /**
      * Artist description
      *
      * @var string
@@ -80,6 +87,38 @@ class Artist
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return News[]
+     */
+    public function getNews()
+    {
+        return $this->news;
+    }
+
+    /**
+     * @param News[] $news
+     */
+    public function setNews($news)
+    {
+        $this->news = $news;
     }
 
     /**

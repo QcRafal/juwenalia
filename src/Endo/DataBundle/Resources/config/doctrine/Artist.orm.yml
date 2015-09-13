@@ -12,8 +12,14 @@ Endo\DataBundle\Entity\Artist:
         title:
             type: string
             length: 255
+            nullable: false
+        slug:
+            type: string
+            length: 255
+            nullable: false
         description:
             type: text
+            nullable: false
     manyToMany:
         events:
             targetEntity: Endo\DataBundle\Entity\Event

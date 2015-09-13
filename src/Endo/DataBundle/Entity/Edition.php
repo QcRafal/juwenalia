@@ -27,6 +27,27 @@ class Edition
     protected $title;
 
     /**
+     * Edition slug
+     *
+     * @var string
+     */
+    protected $slug;
+
+    /**
+     * Edition isPublic flag
+     *
+     * @var boolean
+     */
+    protected $isPublic;
+
+    /**
+     * Edition isActive flag
+     *
+     * @var boolean
+     */
+    protected $isActive;
+
+    /**
      * Collection of events
      *
      * @var Event[]
@@ -63,6 +84,54 @@ class Edition
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsPublic()
+    {
+        return $this->isPublic;
+    }
+
+    /**
+     * @param boolean $isPublic
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * @param boolean $isActive
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
     }
 
     /**

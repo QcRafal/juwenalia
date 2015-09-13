@@ -27,6 +27,13 @@ class Organizer
     protected $title;
 
     /**
+     * Organizer slug
+     *
+     * @var string
+     */
+    protected $slug;
+
+    /**
      * Organizer description
      *
      * @var string
@@ -78,6 +85,22 @@ class Organizer
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**

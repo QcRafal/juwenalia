@@ -11,6 +11,11 @@ Endo\DataBundle\Entity\Edition:
             type: integer
             groups: [api]
             since_version: 1.0.0
+        title:
+            expose: true
+            type: integer
+            groups: [api]
+            since_version: 1.0.0
         events:
             expose: true
             type: ArrayCollection<Endo\DataBundle\Entity\Event>

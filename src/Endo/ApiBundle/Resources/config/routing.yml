@@ -1,3 +1,7 @@
-api_artists:
+api_artist:
     type: rest
     resource: Endo\ApiBundle\Controller\ArtistApiController
+
+api_edition:
+    type: rest
+    resource: Endo\ApiBundle\Controller\EditionApiController

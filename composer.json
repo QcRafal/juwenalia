@@ -29,7 +29,11 @@
         "sensio/generator-bundle": "~2.3",
         "codeclimate/php-test-reporter": "dev-master",
         "symfony/phpunit-bridge": "^2.7",
-        "behat/behat": "^3.0"
+        "behat/behat": "^3.0",
+        "etsy/phpunit-extensions": "^0.7.0",
+        "mybuilder/phpunit-accelerator": "^1.1",
+        "khepin/yaml-fixtures-bundle": "^1.0",
+        "doctrine/doctrine-fixtures-bundle": "^2.2"
     },
     "scripts": {
         "post-root-package-install": [

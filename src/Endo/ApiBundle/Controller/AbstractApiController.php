@@ -11,5 +11,15 @@ use FOS\RestBundle\Routing\ClassResourceInterface;
  */
 abstract class AbstractApiController extends FOSRestController implements ClassResourceInterface
 {
+    /**
+     * @param null $name
+     *
+     * @return \Doctrine\Common\Persistence\ObjectManager|object
+     */
+    protected function getManager($name = null)
+    {
+        $doctrine = $this->getDoctrine();
 
+        return $doctrine->getManager($name);
+    }
 }

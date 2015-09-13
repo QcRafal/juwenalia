@@ -3,10 +3,10 @@
 namespace Endo\ApiBundle\Tests\Controller;
 
 /**
- * Class ArtistControllerTest
+ * Class EditionControllerTest
  * @package Endo\ApiBundle\Tests\Controller
  */
-class ArtistControllerTest extends AbstractControllerTest
+class EditionControllerTest extends AbstractControllerTest
 {
 
     /**
@@ -24,7 +24,19 @@ class ArtistControllerTest extends AbstractControllerTest
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', $this->routerGenerateUrl('get_artists'));
+        $crawler = $client->request('GET', $this->routerGenerateUrl('get_editions'));
+
+        $this->standardResponseTest($client->getResponse());
+    }
+
+    /**
+     * ArtistApiController:getAction test
+     */
+    public function testGetArtist()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', $this->routerGenerateUrl('get_edition', ['slug' => '2011',]));
 
         $this->standardResponseTest($client->getResponse());
     }
@@ -36,7 +48,7 @@ class ArtistControllerTest extends AbstractControllerTest
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', $this->routerGenerateUrl('get_artist', ['slug' => 'test-artist',]));
+        $crawler = $client->request('GET', $this->routerGenerateUrl('get_edition', ['slug' => 'test-edition',]));
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         $this->assertEquals('application/json', $client->getResponse()->headers->get('Content-Type'));

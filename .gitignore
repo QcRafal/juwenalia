@@ -1,3 +1,6 @@
+# keeping directories in repository
+!.gitkeep
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
@@ -38,4 +41,4 @@
 
 # OneSky translations
 /app/Resources/translations/*
-!/app/Resources/translations/.gitkeep
+

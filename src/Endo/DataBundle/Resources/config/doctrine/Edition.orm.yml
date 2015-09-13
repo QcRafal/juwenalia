@@ -12,6 +12,17 @@ Endo\DataBundle\Entity\Edition:
         title:
             type: string
             length: 255
+            nullable: false
+        slug:
+            type: string
+            length: 255
+            nullable: false
+        isPublic:
+            type: boolean
+            nullable: false
+        isActive:
+            type: boolean
+            nullable: false
     oneToMany:
         events:
             targetEntity: Endo\DataBundle\Entity\Event

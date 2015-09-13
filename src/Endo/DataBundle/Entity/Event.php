@@ -27,11 +27,18 @@ class Event
     protected $edition;
 
     /**
-     * Event Title
+     * Event title
      *
      * @var string
      */
     protected $title;
+
+    /**
+     * Event slug
+     *
+     * @var string
+     */
+    protected $slug;
 
     /**
      * Collection of artists
@@ -99,6 +106,22 @@ class Event
     }
 
     /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
      * @param string $title
      *
      * @return $this
@@ -127,6 +150,22 @@ class Event
     }
 
     /**
+     * @param Artist $artist
+     */
+    public function addArtist(Artist $artist)
+    {
+        $this->artists->add($artist);
+    }
+
+    /**
+     * @param Artist $artist
+     */
+    public function removeArtist(Artist $artist)
+    {
+        $this->artists->removeElement($artist);
+    }
+
+    /**
      * @return Organizer[]
      */
     public function getOrganizers()
@@ -140,5 +179,53 @@ class Event
     public function setOrganizers($organizers)
     {
         $this->organizers = $organizers;
+    }
+
+    /**
+     * @param Organizer $organizer
+     */
+    public function addOrganizer(Organizer $organizer)
+    {
+        $this->organizers->add($organizer);
+    }
+
+    /**
+     * @param Organizer $organizer
+     */
+    public function removeOrganizer(Organizer $organizer)
+    {
+        $this->organizers->removeElement($organizer);
+    }
+
+    /**
+     * @return News[]
+     */
+    public function getNews()
+    {
+        return $this->news;
+    }
+
+    /**
+     * @param News[] $news
+     */
+    public function setNews($news)
+    {
+        $this->news = $news;
+    }
+
+    /**
+     * @param News $news
+     */
+    public function addNews(News $news)
+    {
+        $this->news->add($news);
+    }
+
+    /**
+     * @param News $news
+     */
+    public function removeNews(News $news)
+    {
+        $this->news->removeElement($news);
     }
 }

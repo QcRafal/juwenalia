@@ -7,12 +7,12 @@ use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class ArtistController
+ * Class EditionController
  * @package Endo\ApiBundle\Controller
  *
- * @RouteResource("Artist")
+ * @RouteResource("Edition")
  */
-class ArtistApiController extends AbstractApiController
+class EditionApiController extends AbstractApiController
 {
     /**
      *
@@ -21,12 +21,12 @@ class ArtistApiController extends AbstractApiController
     public function cgetAction()
     {
         $em = $this->getManager();
-        $artists = $em->getRepository('EndoDataBundle:Artist')
+        $editions = $em->getRepository('EndoDataBundle:Edition')
             ->findAll();
 
         $view = View::create(
             [
-                'artists' => $artists,
+                'editions' => $editions,
             ],
             200
         );
@@ -47,17 +47,17 @@ class ArtistApiController extends AbstractApiController
     public function getAction($slug)
     {
         $em = $this->getManager();
-        $artist = $em
-            ->getRepository('EndoDataBundle:Artist')
+        $edition = $em
+            ->getRepository('EndoDataBundle:Edition')
             ->findOneBy(['slug' => $slug]);
 
-        if (!$artist) {
+        if (!$edition) {
             throw $this->createNotFoundException();
         }
 
         $view = View::create(
             [
-                'artist' => $artist,
+                'edition' => $edition,
             ],
             200
         );

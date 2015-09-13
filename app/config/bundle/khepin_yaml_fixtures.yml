@@ -1,0 +1,13 @@
+khepin_yaml_fixtures:
+    directory: Resources/fixtures
+    resources:
+        - EndoDataBundle/editions
+        - EndoDataBundle/editions_test
+#        - EndoDataBundle/artists
+#        - EndoDataBundle/artists_test
+#        - EndoDataBundle/organizers
+#        - EndoDataBundle/organizers_test
+#        - EndoDataBundle/events
+#        - EndoDataBundle/events_test
+#        - EndoDataBundle/news
+#        - EndoDataBundle/news_test

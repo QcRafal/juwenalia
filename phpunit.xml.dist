@@ -24,9 +24,6 @@
     </php>
 
     <filter>
-        <blacklist>
-
-        </blacklist>
         <whitelist>
             <directory>src</directory>
             <exclude>
@@ -58,8 +55,11 @@
     </filter>
 
     <logging>
-
         <log type="coverage-clover" target="build/logs/clover.xml"/>
-
     </logging>
+
+    <listeners>
+        <listener class="\MyBuilder\PhpunitAccelerator\TestListener"/>
+    </listeners>
+
 </phpunit>

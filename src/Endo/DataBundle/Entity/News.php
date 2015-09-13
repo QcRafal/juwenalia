@@ -27,6 +27,13 @@ class News
     protected $title;
 
     /**
+     * News slug
+     *
+     * @var string
+     */
+    protected $slug;
+
+    /**
      * News lead
      *
      * @var string
@@ -93,6 +100,22 @@ class News
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     /**
