@@ -8,6 +8,6 @@ khepin_yaml_fixtures:
 #        - EndoDataBundle/organizers
 #        - EndoDataBundle/organizers_test
 #        - EndoDataBundle/events
-#        - EndoDataBundle/events_test
+        - EndoDataBundle/events_test
 #        - EndoDataBundle/news
 #        - EndoDataBundle/news_test

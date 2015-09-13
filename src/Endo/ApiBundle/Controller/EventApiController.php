@@ -5,15 +5,17 @@ namespace Endo\ApiBundle\Controller;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class ArtistController
+ * Class EventApiController
+ *
+ * @author  Rafał Kuć <qc.rafal@gmail.com>
  * @package Endo\ApiBundle\Controller
  *
- * @RouteResource("Artist")
+ *
+ * @RouteResource("Event")
  */
-class ArtistApiController extends AbstractApiController
+class EventApiController extends AbstractApiController
 {
     /**
      * This is the documentation description of your method, it will appear
@@ -22,7 +24,7 @@ class ArtistApiController extends AbstractApiController
      *
      * @ApiDoc(
      *      resource=true,
-     *      section="Artists",
+     *      section="Events",
      *      description="This is a description of your API method",
      *      tags={"alpha", "in-development" = "red"}
      * )
@@ -32,14 +34,14 @@ class ArtistApiController extends AbstractApiController
     public function cgetAction()
     {
         $em = $this->getManager();
-        $artists = $em->getRepository('EndoDataBundle:Artist')
+        $events = $em->getRepository('EndoDataBundle:Event')
             ->findAll();
 
         $view = View::create(
             [
-                'artists' => $artists,
+                'events' => $events,
                 '_links'  => [
-                    'self' => ['href' => $this->get('router')->generate('get_artists')],
+                    'self' => ['href' => $this->get('router')->generate('get_events')],
                 ],
             ],
             200
@@ -51,7 +53,7 @@ class ArtistApiController extends AbstractApiController
     /**
      * @ApiDoc(
      *      description="This is a description of your API method",
-     *      section="Artists",
+     *      section="Events",
      *      tags={"alpha", "in-development" = "red"}
      * )
      */
@@ -65,7 +67,7 @@ class ArtistApiController extends AbstractApiController
      *
      * @ApiDoc(
      *      description="This is a description of your API method",
-     *      section="Artists",
+     *      section="Events",
      *      tags={"alpha", "in-development" = "red"}
      * )
      *
@@ -74,19 +76,19 @@ class ArtistApiController extends AbstractApiController
     public function getAction($slug)
     {
         $em = $this->getManager();
-        $artist = $em
-            ->getRepository('EndoDataBundle:Artist')
+        $event = $em
+            ->getRepository('EndoDataBundle:Event')
             ->findOneBy(['slug' => $slug]);
 
-        if (!$artist) {
+        if (!$event) {
             throw $this->createNotFoundException();
         }
 
         $view = View::create(
             [
-                'artist' => $artist,
+                'event' => $event,
                 '_links' => [
-                    'self' => ['href' => $this->get('router')->generate('get_artist', ['slug' => $slug])],
+                    'self' => ['href' => $this->get('router')->generate('get_event', ['slug' => $slug])],
                 ],
             ],
             200

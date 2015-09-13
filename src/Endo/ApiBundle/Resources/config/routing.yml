@@ -5,3 +5,7 @@ api_artist:
 api_edition:
     type: rest
     resource: Endo\ApiBundle\Controller\EditionApiController
+
+api_event:
+    type: rest
+    resource: Endo\ApiBundle\Controller\EventApiController

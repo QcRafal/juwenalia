@@ -16,6 +16,19 @@ Endo\DataBundle\Entity\Event:
         slug:
             type: string
             length: 255
+            unique: true
+            gedmo:
+                slug:
+                    fields:
+                        - title
+        dateTimeStart:
+            type: datetime
+            nullable: false
+        dateTimeEnd:
+            type: datetime
+            nullable: false
+        description:
+            type: text
             nullable: false
     manyToOne:
         edition:
@@ -31,4 +44,7 @@ Endo\DataBundle\Entity\Event:
         news:
             targetEntity: Endo\DataBundle\Entity\News
             mappedBy: events
+    indexes:
+        search_idx:
+            columns: slug
     lifecycleCallbacks: {  }

@@ -4,6 +4,7 @@ namespace Endo\ApiBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\View\View;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -15,6 +16,16 @@ use Symfony\Component\HttpFoundation\Request;
 class EditionApiController extends AbstractApiController
 {
     /**
+     * This is the documentation description of your method, it will appear
+     * on a specific pane. It will read all the text until the first
+     * annotation.
+     *
+     * @ApiDoc(
+     *      resource=true,
+     *      section="Editions",
+     *      description="This is a description of your API method",
+     *      tags={"alpha", "in-development" = "red"}
+     * )
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -27,6 +38,9 @@ class EditionApiController extends AbstractApiController
         $view = View::create(
             [
                 'editions' => $editions,
+                '_links'  => [
+                    'self' => ['href' => $this->get('router')->generate('get_editions')],
+                ],
             ],
             200
         );
@@ -34,12 +48,25 @@ class EditionApiController extends AbstractApiController
         return $this->handleView($view);
     }
 
+    /**
+     * @ApiDoc(
+     *      description="This is a description of your API method",
+     *      section="Editions",
+     *      tags={"alpha", "in-development" = "red"}
+     * )
+     */
     public function postAction()
     {
 
     }
 
     /**
+     * @ApiDoc(
+     *      description="This is a description of your API method",
+     *      section="Editions",
+     *      tags={"alpha", "in-development" = "red"}
+     * )
+     *
      * @param $slug
      *
      * @return \Symfony\Component\HttpFoundation\Response
@@ -58,6 +85,9 @@ class EditionApiController extends AbstractApiController
         $view = View::create(
             [
                 'edition' => $edition,
+                '_links' => [
+                    'self' => [ 'href' => $this->get('router')->generate('get_edition', ['slug' => $slug])],
+                ]
             ],
             200
         );

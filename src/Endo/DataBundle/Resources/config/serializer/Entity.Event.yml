@@ -6,9 +6,34 @@ Endo\DataBundle\Entity\Event:
             type: integer
             groups: [api, id]
             since_version: 1.0.0
+        edition:
+            expose: true
+            type: Endo\DataBundle\Entity\Edition
+            groups: [api]
+            since_version: 1.0.0
         title:
             expose: true
-            type: integer
+            type: string
+            groups: [api]
+            since_version: 1.0.0
+        slug:
+            expose: true
+            type: string
+            groups: [api]
+            since_version: 1.0.0
+        dateTimeStart:
+            expose: true
+            type: DateTime
+            groups: [api]
+            since_version: 1.0.0
+        dateTimeEnd:
+            expose: true
+            type: DateTime
+            groups: [api]
+            since_version: 1.0.0
+        description:
+            expose: true
+            type: string
             groups: [api]
             since_version: 1.0.0
         artists:

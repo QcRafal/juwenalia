@@ -41,6 +41,41 @@ class Event
     protected $slug;
 
     /**
+     * Event isPublic flag
+     *
+     * @var boolean
+     */
+    protected $isPublic;
+
+    /**
+     * Event publicationDate
+     *
+     * @var \Datetime
+     */
+    protected $publicationDate;
+
+    /**
+     * Event dateTimeStart
+     *
+     * @var \Datetime
+     */
+    protected $dateTimeStart;
+
+    /**
+     * Event dateTimeEnd
+     *
+     * @var \Datetime
+     */
+    protected $dateTimeEnd;
+
+    /**
+     * Event description
+     *
+     * @var string
+     */
+    protected $description;
+
+    /**
      * Collection of artists
      *
      * @var Artist[]
@@ -106,6 +141,18 @@ class Event
     }
 
     /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getSlug()
@@ -122,15 +169,83 @@ class Event
     }
 
     /**
-     * @param string $title
-     *
-     * @return $this
+     * @return boolean
      */
-    public function setTitle($title)
+    public function isIsPublic()
     {
-        $this->title = $title;
+        return $this->isPublic;
+    }
 
-        return $this;
+    /**
+     * @param boolean $isPublic
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+    }
+
+    /**
+     * @return \Datetime
+     */
+    public function getPublicationDate()
+    {
+        return $this->publicationDate;
+    }
+
+    /**
+     * @param \Datetime $publicationDate
+     */
+    public function setPublicationDate($publicationDate)
+    {
+        $this->publicationDate = $publicationDate;
+    }
+
+    /**
+     * @return \Datetime
+     */
+    public function getDateTimeStart()
+    {
+        return $this->dateTimeStart;
+    }
+
+    /**
+     * @param \Datetime $dateTimeStart
+     */
+    public function setDateTimeStart($dateTimeStart)
+    {
+        $this->dateTimeStart = $dateTimeStart;
+    }
+
+    /**
+     * @return \Datetime
+     */
+    public function getDateTimeEnd()
+    {
+        return $this->dateTimeEnd;
+    }
+
+    /**
+     * @param \Datetime $dateTimeEnd
+     */
+    public function setDateTimeEnd($dateTimeEnd)
+    {
+        $this->dateTimeEnd = $dateTimeEnd;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     /**

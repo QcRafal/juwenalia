@@ -1,0 +1,19 @@
+model: Endo\DataBundle\Entity\Event
+tags: [ test ]
+fixtures:
+    event_1:
+        title: "Test event"
+        edition: edition_2011
+        isPublic: true
+        dateTimeStart: "2011-05-08 15:00"
+        dateTimeEnd: "2011-05-08 23:00"
+        description: |
+            test event description
+    event_2:
+        title: "Test draft event"
+        edition: edition_2011
+        isPublic: false
+        dateTimeStart: "2011-05-09 15:00"
+        dateTimeEnd: "2011-05-09 23:00"
+        description: |
+            test draft event description
