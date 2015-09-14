@@ -3,5 +3,4 @@ fos_rest:
         default_format: json
         include_format: false
     serializer:
-        groups: [api]
         serialize_null: true

@@ -47,6 +47,8 @@ class EventApiController extends AbstractApiController
             200
         );
 
+        $view->setSerializationContext($this->getSerializationContext());
+
         return $this->handleView($view);
     }
 
@@ -93,6 +95,8 @@ class EventApiController extends AbstractApiController
             ],
             200
         );
+
+        $view->setSerializationContext($this->getSerializationContext());
 
         return $this->handleView($view);
     }

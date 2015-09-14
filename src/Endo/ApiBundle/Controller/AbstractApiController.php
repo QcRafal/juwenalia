@@ -4,6 +4,7 @@ namespace Endo\ApiBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
+use JMS\Serializer\SerializationContext;
 
 /**
  * Class AbstractApiController
@@ -21,5 +22,17 @@ abstract class AbstractApiController extends FOSRestController implements ClassR
         $doctrine = $this->getDoctrine();
 
         return $doctrine->getManager($name);
+    }
+
+    /**
+     * @param array $groups
+     *
+     * @return SerializationContext
+     */
+    protected function getSerializationContext(array $groups = ['api'])
+    {
+        // TODO add groups based on user credentials
+
+        return SerializationContext::create()->setGroups($groups);
     }
 }

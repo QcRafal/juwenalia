@@ -47,6 +47,8 @@ class OrganizerApiController extends AbstractApiController
             200
         );
 
+        $view->setSerializationContext($this->getSerializationContext());
+
         return $this->handleView($view);
     }
 
@@ -97,6 +99,8 @@ class OrganizerApiController extends AbstractApiController
             ],
             200
         );
+
+        $view->setSerializationContext($this->getSerializationContext());
 
         return $this->handleView($view);
     }

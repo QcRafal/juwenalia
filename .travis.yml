@@ -36,7 +36,7 @@ install:
     - bin/console doctrine:database:create
     - bin/console doctrine:schema:create
     - bin/console khepin:yamlfixtures:load test
-    - bin/console cache:clear   
+    - bin/console cache:clear
     - bin/console fos:user:create admin admin@example.com pass
     - bin/console cache:clear
 

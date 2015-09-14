@@ -22,6 +22,8 @@ security:
                 provider: fos_userbundle
                 check_path: fos_user_security_check
                 login_path: fos_user_security_login
+                use_referer: true
+                target: /oauth/v2/auth
             anonymous: true
 
 
